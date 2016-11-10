@@ -41,7 +41,7 @@ var orm = {
         },
 
         insertOne: function (table, cols, vals, callback) {
-            var queryString = 'INSERT INTO' + table;
+            var queryString = 'INSERT INTO ' + table;
 
             queryString = queryString + ' (';
             queryString = queryString + cols.toString();
@@ -60,7 +60,7 @@ var orm = {
             });
         },
 
-        updateOne: function () {
+        updateOne: function (table, objColVals, condition, callback) {
           var queryString = 'UPDATE ' + table;
 
           queryString = queryString + ' SET ';

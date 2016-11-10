@@ -2,19 +2,19 @@ var orm = require('../config/orm.js');
 
 // Model that will interface with the database
 var burger = {
-    selectAll: function(cb) {
-        orm.all('cats', function(res) {
+    selectAll: function(callback) {
+        orm.selectAll('burgers', function(res) {
             callback(res);
         });
     },
     // cols and vals are arrays
-    insertOne: function(cols, vals, cb) {
-        orm.create('cats', cols, vals, function(res) {
+    insertOne: function(cols, vals, callback) {
+        orm.insertOne('burgers', cols, vals, function(res) {
             callback(res);
         });
     },
-    updateOne: function(objColVals, condition, cb) {
-        orm.update('cats', objColVals, condition, function(res) {
+    updateOne: function(objColVals, condition, callback) {
+        orm.updateOne('burgers', objColVals, condition, function(res) {
             callback(res);
         });
     }
